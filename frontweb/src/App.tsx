@@ -1,12 +1,10 @@
-import Home from 'pages/Home';
-
 import './assets/styles/custom.scss';
 import './App.css';
 
-function App () {
-  return (
-    <Home />
-  );
+import Routes from 'Routes';
+
+function App() {
+  return <Routes />;
 }
 
 export default App;
