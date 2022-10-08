@@ -1,7 +1,6 @@
-import "./styles.css";
+import './styles.css';
 
 const Navbar = () => {
-
     return (
         <nav className="admin-nav-container">
             <ul>
