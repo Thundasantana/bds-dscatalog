@@ -10,8 +10,6 @@ import axios from 'axios';
 import CardLoader from './CardLoader';
 
 import './styles.css';
-import { isTemplateMiddleOrTemplateTail } from 'typescript';
-
 
 const Catalog = () => {
   
