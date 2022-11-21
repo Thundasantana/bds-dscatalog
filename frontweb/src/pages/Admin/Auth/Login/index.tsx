@@ -3,7 +3,7 @@ import ButtonIcon from 'components/ButtonIcon';
 
 import './styles.css';
 import { useForm } from 'react-hook-form';
-import { type } from '@testing-library/user-event/dist/type';
+
 
 type FormData = {
   username: string;
