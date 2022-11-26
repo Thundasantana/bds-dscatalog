@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
+import { config } from 'process';
 import qs from 'qs';
 
 type LoginResponse = {
@@ -33,7 +34,18 @@ export const requestBackendLogin = (loginData : LoginData) => {
         ...loginData,
         grant_type : 'password'
     });
+
     return axios({ method: 'POST', baseURL: BASE_URL, url: '/oauth/token', data, headers });
+}
+
+export const requestBackend = (config: AxiosRequestConfig) => {
+    
+    const headers = config.withCredentials ? {
+        ...config.headers,
+        Authorization: "Bearer " + getAuthData().access_token
+    } : {};
+    
+    return axios({...config, baseURL: BASE_URL, headers});
 }
 
 export const saveAuthData = (obj : LoginResponse) => {
