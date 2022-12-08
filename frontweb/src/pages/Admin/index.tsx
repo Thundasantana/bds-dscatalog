@@ -1,8 +1,9 @@
 import { Switch } from 'react-router-dom';
 import Navbar from './Navbar';
 import PrivateRoute from 'components/PrivateRoute';
-import './styles.css';
 import Users from './User';
+import './styles.css';
+
 
 const Admin = () => {
   return (
