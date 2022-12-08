@@ -3,13 +3,13 @@ import qs from 'qs';
 import history from './history';
 import jwtDecode from 'jwt-decode';
 
-type Role = 'ROLE_OPERATOR' | 'ROLE_ADMIN'
+type Role = 'ROLE_OPERATOR' | 'ROLE_ADMIN';
 
 export type TokenData = {
   exp: number;
   user_name: string;
   authorities: Role[];
-}
+};
 
 type LoginResponse = {
   access_token: string;
@@ -18,7 +18,7 @@ type LoginResponse = {
   scope: string;
   userFirstName: string;
   userId: number;
-}
+};
 
 export const BASE_URL = process.env.REACT_APP_BACKEND_URL ?? 'http://localhost:8080';
 
@@ -98,10 +98,25 @@ export const getTokenData = (): TokenData | undefined => {
   catch (error) {
     return undefined;
   }
-}
+};
 
 export const isAuthenticated = (): boolean => {
   const tokenData = getTokenData();
 
   return (tokenData && tokenData.exp * 1000 > Date.now()) ? true : false;
+};
+
+export const hasAnyRoles = (roles: Role[]): boolean => {
+
+  if (roles.length === 0) {
+    return true;
+  }
+
+  const tokenData = getTokenData();
+
+  if (tokenData !== undefined) {
+    return roles.some(role => tokenData.authorities.includes(role));
+  }
+
+  return false;
 }
