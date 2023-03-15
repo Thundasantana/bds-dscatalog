@@ -16,7 +16,6 @@ const Catalog = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-
     const params : AxiosRequestConfig = {
       method: 'GET',
       url: "/products",
