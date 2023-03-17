@@ -29,8 +29,8 @@ const Form = () => {
       withCredentials: true,
     };
 
-    requestBackend(config).then((response) => {
-      console.log(response.data);
+    requestBackend(config).then(() => {
+      history.push('/admin/products');
     });
   };
 
@@ -46,6 +46,7 @@ const Form = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="row product-crud-inputs-container">
             <div className="col-lg-4 product-crud-inputs-left-container">
+              
               <div className="margin-botton-30">
                 <input
                   {...register('name', {
@@ -65,18 +66,19 @@ const Form = () => {
 
               <div className="margin-botton-30">
                 <input
-                  {...register('description', {
+                  {...register('price', {
                     required: 'Campo obrigatório',
                   })}
                   type="text"
                   className={`form-control base-input ${
                     errors.name ? 'is-invalid' : ''
                   }`}
-                  placeholder="Descrição"
-                  name="description"
+                  placeholder="Preço"
+                  name="price"
                 />
+
                 <div className="invalid-feedback d-block">
-                  {errors.name?.message}
+                  {errors.price?.message}
                 </div>
 
                 <div className="invalid-feedback d-block">
@@ -84,6 +86,7 @@ const Form = () => {
                 </div>
               </div>
             </div>
+
             <div className="col-lg-6">
               <div>
                 <textarea
@@ -103,6 +106,7 @@ const Form = () => {
                 </div>
               </div>
             </div>
+
           </div>
           <div className="product-crud-buttons-container">
             <button
