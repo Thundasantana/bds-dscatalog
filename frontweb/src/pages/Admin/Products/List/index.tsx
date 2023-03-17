@@ -37,7 +37,7 @@ const List = () => {
         <div className="base-card product-filter-container">Search bar</div>
       </div>
       <div className="row">
-        {page?.content.map((product) => (
+        {page?.content.map(product => (
           <div key={product.id} className="col-sm-6 col-md-12">
             <ProductCrudCard product={product} />
           </div>
