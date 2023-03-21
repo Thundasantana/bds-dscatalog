@@ -22,16 +22,22 @@
   background-color: #407bff;
 }
 
+.pagination-link-active {
+  background-color: #407bff;
+}
+
 .arrow-previous {
   transform: rotate(-180deg);
 }
 
 .arrow-next {
   margin-left: 10px;
+  color: #407bff;
 }
 
 .arrow-inactive {
   color: #e1e1e1;
+  color: #407bff;
 }
 
 .arrow-active {
