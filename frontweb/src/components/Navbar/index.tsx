@@ -1,5 +1,6 @@
 import './styles.css';
-import 'bootstrap/js/src/collapse.js';
+import '@popperjs/core';
+import 'bootstrap/js/src/collapse';
 import { Link, NavLink } from 'react-router-dom';
 import { getTokenData, isAuthenticated } from 'util/auth';
 import { useContext, useEffect } from 'react';
@@ -8,10 +9,9 @@ import { AuthContext } from 'AuthContext';
 import { removeAuthData } from 'util/storage';
 
 const Navbar = () => {
+  const { authContextData, setAuthContextData } = useContext(AuthContext);
 
-const { authContextData, setAuthContextData } = useContext(AuthContext);
-
-    useEffect(() => {
+  useEffect(() => {
     if (isAuthenticated()) {
       setAuthContextData({
         authenticated: true,
@@ -75,7 +75,9 @@ const { authContextData, setAuthContextData } = useContext(AuthContext);
         <div className="nav-login-logout">
           {authContextData.authenticated ? (
             <>
-              <span className="nav-username">{authContextData.tokenData?.user_name}</span>
+              <span className="nav-username">
+                {authContextData.tokenData?.user_name}
+              </span>
               <a href="#logout" onClick={handleLogoutClick}>
                 LOGOUT
               </a>
