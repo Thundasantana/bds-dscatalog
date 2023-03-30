@@ -1,6 +1,6 @@
 import './styles.css';
 import '@popperjs/core';
-import 'bootstrap/js/src/collapse';
+import 'bootstrap/js/dist/collapse';
 import { Link, NavLink } from 'react-router-dom';
 import { getTokenData, isAuthenticated } from 'util/auth';
 import { useContext, useEffect } from 'react';
