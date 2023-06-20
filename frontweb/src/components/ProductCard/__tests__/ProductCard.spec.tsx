@@ -7,7 +7,7 @@ test('should render ProductCard', () => {
     const product : Product = {
         name: "Computador",
         price: 2345.67,
-        imUrl: "https//google.com"
+        imgUrl: "https://google.com"
     } as Product;
 
     render(
