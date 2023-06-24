@@ -27,8 +27,8 @@ const findAllResponse = {
             "date": "2020-07-14T10:00:00Z",
             "categories": [
                 {
-                    "id": 1,
-                    "name": "Livros"
+                    "id": 2,
+                    "name": "Eletrônicos"
                 },
                 {
                     "id": 3,
