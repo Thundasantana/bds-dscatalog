@@ -49,8 +49,7 @@ const ProductCrudCard = ({ product, onDelete }: Props) => {
       <div className="product-crud-card-buttons-container">
         <button
           onClick={() => handleDelete(product.id)}
-          className="brn btn-outline-danger product-crud-card-button button-first"
-        >
+          className="brn btn-outline-danger product-crud-card-button product-crud-card-button-first">
           EXCLUIR
         </button>
 
